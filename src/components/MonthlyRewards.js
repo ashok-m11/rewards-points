@@ -51,11 +51,10 @@ function MonthlyRewards() {
 
   return (
     <div>
-      {isLoading && <div role="status" aria-live="polite">Loading...</div>}
-      {error && <div className="alert alert-danger" role="alert">Error: {error}</div>}
+   
       
       <h3 className="heading">User Monthly Rewards</h3> {/* Heading always displayed */}
-
+      {isLoading ? <div role="status" aria-live="polite">Loading...</div> : error ? <div className="alert alert-danger" role="alert">Error: {error}</div> : null}
       {dataSet.length > 0 ? (
         <table className="table table-hover table-sm caption-top">
           <thead className="thead-dark">
@@ -80,7 +79,7 @@ function MonthlyRewards() {
           </tbody>
         </table>
       ) : (
-        <p>No data available</p> // Display when there's no data
+        <p>{!error && "No data available"}</p> // Display when there's no data
       )}
     </div>
   );
