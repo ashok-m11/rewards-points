@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { handleFetchData } from "../fetchdata";
 
 function TotalRewards() {
@@ -6,7 +6,8 @@ function TotalRewards() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
+   // Define fetchData with useCallback to avoid unnecessary re-creations
+   const fetchData = useCallback(async () => {
     try {
       const res = await handleFetchData();
       return !res.error ? aggregateData(res) : setError(res.error);
@@ -17,34 +18,34 @@ function TotalRewards() {
     } finally {
       setIsLoading(false);
     }
-  };
-  
+  }, []); 
+
   useEffect(() => {
     fetchData();
-  },[]);
+  }, [fetchData]); 
 
-  const aggregateData = (data) =>{
-    const groupedData = data?.reduce((acc, item)=>{
-        if(!acc[item?.customerName]){
-            acc[item?.customerName] = 0
-        }
-        acc[item?.customerName] += item?.rewardsPoints;
-        return acc;
+  const aggregateData = (data) => {
+    const groupedData = data?.reduce((acc, item) => {
+      if (!acc[item?.customerId]) {
+        acc[item?.customerId] = { customerName: item?.customerName, rewardsPoints: 0 };
+      }
+      acc[item?.customerId].rewardsPoints += item?.rewardsPoints;
+      return acc;
     }, {});
-    const result = Object.entries(groupedData).map(([customerName, rewardsPoints])=>({
-        customerName, rewardsPoints
-    }))
-    setDataSet(result)
-  }
+    
+    const result = Object.entries(groupedData).map(([customerId, { customerName, rewardsPoints }]) => ({
+      customerId, customerName, rewardsPoints
+    }));
+
+    setDataSet(result);
+  };
 
  
   
   return (
     <div>
       
-{isLoading && <div role="status" aria-live="polite">Loading...</div>}
-{error && <div className="alert alert-danger" role="alert">Error: {error}</div>}
-
+      {isLoading ? <p>Loading...</p> : error ? <p>{error}</p> : <p>Data Loaded</p>}
 {
 dataSet.length && 
 <>

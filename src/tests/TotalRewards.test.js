@@ -12,46 +12,42 @@ describe('TotalRewards Component', () => {
 
     render(<TotalRewards />);
 
-    // Assert that the loading spinner is displayed
-    expect(screen.getByRole('status')).toBeInTheDocument();
+    expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
 
   it('shows error message when fetching data fails', async () => {
-    // Mock handleFetchData to reject with an error message
-    handleFetchData.mockRejectedValueOnce(new Error('Failed to fetch'));
+    // Mock the fetch function to return an error
+    handleFetchData.mockRejectedValue(new Error('Failed to fetch'));
 
     render(<TotalRewards />);
 
-    // Wait for the error message to appear
+    // Wait for the error message to be displayed
     await waitFor(() => {
-      // Look for the alert div with role="alert"
-      const errorMessage = screen.queryByRole('alert');
-      expect(errorMessage).toBeInTheDocument();
-     // expect(errorMessage).toHaveTextContent('Error: Something went wrong');
+      expect(screen.getByText('Something went wrong')).toBeInTheDocument();
     });
   });
 
   it('displays total rewards table when data is fetched successfully', async () => {
     // Mock the data that would be returned by handleFetchData
     const mockData = [
-      { customerName: 'Alice', rewardsPoints: 100 },
-      { customerName: 'Bob', rewardsPoints: 200 },
+      { customerId: '1', customerName: 'Alice', rewardsPoints: 300 },
+      { customerId: '2', customerName: 'Bob', rewardsPoints: 200 },
     ];
     
-    // Simulate a successful data fetch
-    handleFetchData.mockResolvedValueOnce(mockData);
+    // Mock the fetch function to return mockData
+    handleFetchData.mockResolvedValue(mockData);
 
     render(<TotalRewards />);
 
     // Wait for the table to be displayed
     await waitFor(() => {
-      expect(screen.getByText('Total rewards')).toBeInTheDocument();
+      expect(screen.getByText('Data Loaded')).toBeInTheDocument();
     });
 
-    // Assert that the table rows are displayed correctly
+    // Check if the data is displayed correctly
     expect(screen.getByText('Alice')).toBeInTheDocument();
-    expect(screen.getByText('100')).toBeInTheDocument();
     expect(screen.getByText('Bob')).toBeInTheDocument();
+    expect(screen.getByText('300')).toBeInTheDocument();
     expect(screen.getByText('200')).toBeInTheDocument();
   });
 
