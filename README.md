@@ -10,14 +10,8 @@ This is a React-based project that tracks and displays customer transaction data
 - Display aggregated reward points by month and year.
 - Filter transactions based on price and date range (e.g., last 3 months).
 
-### `npm install`
-To install all required packages
 
-### `npm start`
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
+### Files and their content
 src/services/fetchData.js  which contains fetch json data from public/data.json
 Rewards points calculation logic is in src/utils/util.js
 
@@ -40,6 +34,24 @@ Transactions.js component contains All transactions with reward points
 This table contans latest three months transactions and their reward points
 ![Transactions Screenshot](./screenshots/transactions.png)
 
+## Installation
+
+To set up this project locally:
+
+1. Clone the repo:
+   git clone https://github.com/ashok-m11/rewards-points.git
+
+2. Navigate to the project directory:
+cd your-repo-name
+
+3. Install the dependencies:
+npm install
+
+4. Start the development server:
+npm start
+
+This will start the app on http://localhost:3000.
 
 
-### `npm test`
+### `Running Tests`
+To run tests in this project: npm test
