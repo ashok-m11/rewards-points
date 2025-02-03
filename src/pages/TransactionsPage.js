@@ -17,7 +17,6 @@ function TransactionsPage() {
   const handleRowClick = (value) => {
     setSelectedRow(value);
   };
-  console.log("selected row", selectedRow);
 
   const fetchDataTransactions = async () => {
     try {
