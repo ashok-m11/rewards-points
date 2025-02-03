@@ -114,7 +114,7 @@
     },
     {
       "transactionId": "T015",
-      "customerId": "CUS016",
+      "customerId": "CUS006",
       "customerName": "Neha",
       "purchaseDate": "01/11/2024",
       "productPurchased": "Shirt",
@@ -206,7 +206,7 @@
       "customerName": "Kunal",
       "purchaseDate": "15/01/2025",
       "productPurchased": "Sweater",
-      "price": 99.99
+      "price": 99.94
     },
     {
       "transactionId": "T027",
@@ -236,9 +236,1458 @@
       "transactionId": "T030",
       "customerId": "CUS030",
       "customerName": "Nikhil",
-      "purchaseDate": "28/02/2025",
+      "purchaseDate": "28/11/2024",
       "productPurchased": "T-Shirt",
       "price": 60
+    },
+    {
+      "transactionId": "T031",
+      "customerId": "CUS029",
+      "customerName": "Sonal",
+      "purchaseDate": "06/11/2024",
+      "productPurchased": "T-Shirt",
+      "price": 90
+    },
+    {
+      "transactionId": "T032",
+      "customerId": "CUS002",
+      "customerName": "John",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "Shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T033",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "15/01/2025",
+      "productPurchased": "Jeans",
+      "price": 90
+    },
+    {
+      "transactionId": "T034",
+      "customerId": "CUS004",
+      "customerName": "Ram",
+      "purchaseDate": "20/12/2024",
+      "productPurchased": "Sweater",
+      "price": 120
+    },
+    {
+      "transactionId": "T035",
+      "customerId": "CUS005",
+      "customerName": "Raju",
+      "purchaseDate": "01/11/2024",
+      "productPurchased": "Shirt",
+      "price": 110
+    },
+    {
+      "transactionId": "T036",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "Trousers",
+      "price": 80
+    },
+    {
+      "transactionId": "T037",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "12/11/2024",
+      "productPurchased": "Jacket",
+      "price": 200
+    },
+    {
+      "transactionId": "T038",
+      "customerId": "CUS008",
+      "customerName": "Sita",
+      "purchaseDate": "18/11/2024",
+      "productPurchased": "Sweater",
+      "price": 145
+    },
+    {
+      "transactionId": "T039",
+      "customerId": "CUS009",
+      "customerName": "Nisha",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Dress",
+      "price": 90
+    },
+    {
+      "transactionId": "T040",
+      "customerId": "CUS010",
+      "customerName": "Arjun",
+      "purchaseDate": "01/11/2024",
+      "productPurchased": "Shirt",
+      "price": 75
+    },
+    {
+      "transactionId": "T041",
+      "customerId": "CUS011",
+      "customerName": "Karan",
+      "purchaseDate": "05/11/2024",
+      "productPurchased": "Jeans",
+      "price": 95
+    },
+    {
+      "transactionId": "T042",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "T-Shirt",
+      "price": 85
+    },
+    {
+      "transactionId": "T043",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Sweater",
+      "price": 70
+    },
+    {
+      "transactionId": "T044",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jacket",
+      "price": 120
+    },
+    {
+      "transactionId": "T045",
+      "customerId": "CUS015",
+      "customerName": "Ravi",
+      "purchaseDate": "01/12/2024",
+      "productPurchased": "Jeans",
+      "price": 105
+    },
+    {
+      "transactionId": "T046",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 150
+    },
+    {
+      "transactionId": "T047",
+      "customerId": "CUS017",
+      "customerName": "Jatin",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Shirt",
+      "price": 85
+    },
+    {
+      "transactionId": "T048",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Sweater",
+      "price": 110
+    },
+    {
+      "transactionId": "T049",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "20/12/2024",
+      "productPurchased": "Jacket",
+      "price": 200
+    },
+    {
+      "transactionId": "T050",
+      "customerId": "CUS020",
+      "customerName": "Sneha",
+      "purchaseDate": "25/12/2024",
+      "productPurchased": "Watch",
+      "price": 95
+    },
+    {
+      "transactionId": "T051",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "05/01/2025",
+      "productPurchased": "Jeans",
+      "price": 115
+    },
+    {
+      "transactionId": "T052",
+      "customerId": "CUS022",
+      "customerName": "Saurabh",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Shirt",
+      "price": 90
+    },
+    {
+      "transactionId": "T053",
+      "customerId": "CUS023",
+      "customerName": "Suman",
+      "purchaseDate": "15/01/2025",
+      "productPurchased": "Trousers",
+      "price": 130
+    },
+    {
+      "transactionId": "T054",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Sweater",
+      "price": 95
+    },
+    {
+      "transactionId": "T055",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "25/01/2025",
+      "productPurchased": "Shirt",
+      "price": 75
+    },
+    {
+      "transactionId": "T056",
+      "customerId": "CUS025",
+      "customerName": "Rina",
+      "purchaseDate": "01/02/2025",
+      "productPurchased": "Jeans",
+      "price": 90
+    },
+    {
+      "transactionId": "T057",
+      "customerId": "CUS029",
+      "customerName": "Sonal",
+      "purchaseDate": "07/11/2024",
+      "productPurchased": "T-Shirt",
+      "price": 130.7
+    },
+    {
+      "transactionId": "T058",
+      "customerId": "CUS011",
+      "customerName": "Karan",
+      "purchaseDate": "31/12/2024",
+      "productPurchased": "Jeans",
+      "price": 97
+    },
+    {
+      "transactionId": "T059",
+      "customerId": "CUS011",
+      "customerName": "Karan",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jeans",
+      "price": 97
+    },
+    {
+      "transactionId": "T060",
+      "customerId": "CUS011",
+      "customerName": "Karan",
+      "purchaseDate": "22/12/2024",
+      "productPurchased": "Jacket",
+      "price": 97
+    },
+    {
+      "transactionId": "T061",
+      "customerId": "CUS011",
+      "customerName": "Karan",
+      "purchaseDate": "15/01/2025",
+      "productPurchased": "Jeans",
+      "price": 140.78
+    },
+    {
+      "transactionId": "T061",
+      "customerId": "CUS011",
+      "customerName": "Karan",
+      "purchaseDate": "01/02/2025",
+      "productPurchased": "T-Shirt",
+      "price": 97
+    },
+    {
+      "transactionId": "T062",
+      "customerId": "CUS017",
+      "customerName": "Jatin",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Jacket",
+      "price": 113
+    },
+    {
+      "transactionId": "T063",
+      "customerId": "CUS017",
+      "customerName": "Jatin",
+      "purchaseDate": "10/01/2024",
+      "productPurchased": "Sweater",
+      "price": 185.66
+    },
+    {
+      "transactionId": "T064",
+      "customerId": "CUS017",
+      "customerName": "Jatin",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "Jacket",
+      "price": 99
+    },
+    {
+      "transactionId": "T065",
+      "customerId": "CUS017",
+      "customerName": "Jatin",
+      "purchaseDate": "03/03/2025",
+      "productPurchased": "Shirt",
+      "price": 115
+    },
+    {
+      "transactionId": "T066",
+      "customerId": "CUS002",
+      "customerName": "John",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "Books",
+      "price": 60
+    },
+    {
+      "transactionId": "T067",
+      "customerId": "CUS002",
+      "customerName": "John",
+      "purchaseDate": "12/12/2024",
+      "productPurchased": "Shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T068",
+      "customerId": "CUS002",
+      "customerName": "John",
+      "purchaseDate": "19/11/2024",
+      "productPurchased": "Bag",
+      "price": 60
+    },
+    {
+      "transactionId": "T069",
+      "customerId": "CUS002",
+      "customerName": "John",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T070",
+      "customerId": "CUS002",
+      "customerName": "John",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Shoes",
+      "price": 60
+    },
+    {
+      "transactionId": "T071",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Jeans",
+      "price": 99.99
+    },
+    {
+      "transactionId": "T072",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Shirt",
+      "price": 75.5
+    },
+    {
+      "transactionId": "T073",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "01/12/2024",
+      "productPurchased": "Sweater",
+      "price": 150
+    },
+    {
+      "transactionId": "T074",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "T-Shirt",
+      "price": 80
+    },
+    {
+      "transactionId": "T075",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Jacket",
+      "price": 120
+    },
+    {
+      "transactionId": "T076",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Dress",
+      "price": 95
+    },
+    {
+      "transactionId": "T077",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "20/12/2024",
+      "productPurchased": "Shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T078",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "01/01/2025",
+      "productPurchased": "Jeans",
+      "price": 110
+    },
+    {
+      "transactionId": "T079",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "05/01/2025",
+      "productPurchased": "Sweater",
+      "price": 140
+    },
+    {
+      "transactionId": "T080",
+      "customerId": "CUS006",
+      "customerName": "Neha",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "T-Shirt",
+      "price": 65
+    },
+    {
+      "transactionId": "T081",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "11/01/2025",
+      "productPurchased": "T-shirt",
+      "price": 50
+    },
+    {
+      "transactionId": "T082",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "11/11/2024",
+      "productPurchased": "Shoes",
+      "price": 120
+    },
+    {
+      "transactionId": "T083",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "12/12/2024",
+      "productPurchased": "Sweater",
+      "price": 75
+    },
+    {
+      "transactionId": "T084",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "17/12/2024",
+      "productPurchased": "Jacket",
+      "price": 150
+    },
+    {
+      "transactionId": "T085",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "01/01/2025",
+      "productPurchased": "Shirt",
+      "price": 65
+    },
+    {
+      "transactionId": "T086",
+      "customerId": "CUS021",
+      "customerName": "Amit",
+      "purchaseDate": "01/02/2025",
+      "productPurchased": "Hat",
+      "price": 30
+    },
+    {
+      "transactionId": "T087",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "11/11/2024",
+      "productPurchased": "Skirt",
+      "price": 80
+    },
+    {
+      "transactionId": "T088",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "11/12/2024",
+      "productPurchased": "Blouse",
+      "price": 45
+    },
+    {
+      "transactionId": "T089",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "12/01/2025",
+      "productPurchased": "Jacket",
+      "price": 130
+    },
+    {
+      "transactionId": "T090",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "131/01/2025",
+      "productPurchased": "Dress",
+      "price": 95
+    },
+    {
+      "transactionId": "T091",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "12/12/2024",
+      "productPurchased": "Shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T092",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "01/02/2025",
+      "productPurchased": "Sweater",
+      "price": 100
+    },
+    {
+      "transactionId": "T093",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "01/02/2025",
+      "productPurchased": "Shoes",
+      "price": 120
+    },
+    {
+      "transactionId": "T094",
+      "customerId": "CUS014",
+      "customerName": "Anjali",
+      "purchaseDate": "03/02/2025",
+      "productPurchased": "T-shirt",
+      "price": 40
+    },
+    {
+      "transactionId": "T095",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "19/11/2024",
+      "productPurchased": "Shirt",
+      "price": 90
+    },
+    {
+      "transactionId": "T096",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "T-shirt",
+      "price": 50
+    },
+    {
+      "transactionId": "T097",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "20/12/2024",
+      "productPurchased": "Sweater",
+      "price": 120
+    },
+    {
+      "transactionId": "T098",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "25/12/2024",
+      "productPurchased": "Shoes",
+      "price": 150
+    },
+    {
+      "transactionId": "T099",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "13/11/2024",
+      "productPurchased": "Jacket",
+      "price": 180
+    },
+    {
+      "transactionId": "T100",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Hat",
+      "price": 40
+    },
+    {
+      "transactionId": "T101",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "12/11/2024",
+      "productPurchased": "Jeans",
+      "price": 210
+    },
+    {
+      "transactionId": "T102",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "18/11/2024",
+      "productPurchased": "Scarf",
+      "price": 30
+    },
+    {
+      "transactionId": "T103",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "02/12/2024",
+      "productPurchased": "Gloves",
+      "price": 25
+    },
+    {
+      "transactionId": "T104",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "08/12/2024",
+      "productPurchased": "Shirt",
+      "price": 85
+    },
+    {
+      "transactionId": "T105",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Sweater",
+      "price": 125
+    },
+    {
+      "transactionId": "T106",
+      "customerId": "CUS003",
+      "customerName": "Ashok",
+      "purchaseDate": "22/12/2024",
+      "productPurchased": "Boots",
+      "price": 200
+    },
+    {
+      "transactionId": "T107",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "01/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 45.99
+    },
+    {
+      "transactionId": "T108",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "10/11/2024",
+      "productPurchased": "Shoes",
+      "price": 120.50
+    },
+    {
+      "transactionId": "T109",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Sweater",
+      "price": 99.99
+    },
+    {
+      "transactionId": "T110",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "18/12/2024",
+      "productPurchased": "Jacket",
+      "price": 155.75
+    },
+    {
+      "transactionId": "T111",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Pants",
+      "price": 70.99
+    },
+    {
+      "transactionId": "T112",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "11/12/2024",
+      "productPurchased": "Sweater",
+      "price": 105.00
+    },
+    {
+      "transactionId": "T113",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "11/11/2024",
+      "productPurchased": "Shirt",
+      "price": 60.25
+    },
+    {
+      "transactionId": "T114",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "14/11/2024",
+      "productPurchased": "Scarf",
+      "price": 22.99
+    },
+    {
+      "transactionId": "T115",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "21/11/2024",
+      "productPurchased": "T-shirt",
+      "price": 50.99
+    },
+    {
+      "transactionId": "T116",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "28/11/2024",
+      "productPurchased": "Gloves",
+      "price": 15.75
+    },
+    {
+      "transactionId": "T117",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "12/12/2024",
+      "productPurchased": "Boots",
+      "price": 135.30
+    },
+    {
+      "transactionId": "T118",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "08/11/2024",
+      "productPurchased": "Hat",
+      "price": 25.50
+    },
+    {
+      "transactionId": "T119",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "14/12/2024",
+      "productPurchased": "Shirt",
+      "price": 55.00
+    },
+    {
+      "transactionId": "T120",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "19/12/2024",
+      "productPurchased": "Sweater",
+      "price": 99.00
+    },
+    {
+      "transactionId": "T121",
+      "customerId": "CUS023",
+      "customerName": "Deepak",
+      "purchaseDate": "23/12/2024",
+      "productPurchased": "Pants",
+      "price": 80.75
+    },
+    {
+      "transactionId": "T122",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "01/10/2024",
+      "productPurchased": "Shirt",
+      "price": 60.50
+    },
+    {
+      "transactionId": "T123",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "05/10/2024",
+      "productPurchased": "Jeans",
+      "price": 85.75
+    },
+    {
+      "transactionId": "T124",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "12/10/2024",
+      "productPurchased": "T-shirt",
+      "price": 45.99
+    },
+    {
+      "transactionId": "T125",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "18/10/2024",
+      "productPurchased": "Sweater",
+      "price": 95.00
+    },
+    {
+      "transactionId": "T126",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "22/10/2024",
+      "productPurchased": "Jacket",
+      "price": 120.25
+    },
+    {
+      "transactionId": "T127",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "03/11/2024",
+      "productPurchased": "Shoes",
+      "price": 75.50
+    },
+    {
+      "transactionId": "T128",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "08/11/2024",
+      "productPurchased": "Hat",
+      "price": 25.99
+    },
+    {
+      "transactionId": "T129",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "14/11/2024",
+      "productPurchased": "Scarf",
+      "price": 20.00
+    },
+    {
+      "transactionId": "T130",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "21/11/2024",
+      "productPurchased": "Gloves",
+      "price": 18.50
+    },
+    {
+      "transactionId": "T131",
+      "customerId": "CUS024",
+      "customerName": "Dinesh",
+      "purchaseDate": "28/11/2024",
+      "productPurchased": "Shirt",
+      "price": 60.50
+    },
+    {
+      "transactionId": "T132",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Shirt",
+      "price": 55.50
+    },
+    {
+      "transactionId": "T133",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 85.75
+    },
+    {
+      "transactionId": "T134",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Sweater",
+      "price": 99.94
+    },
+    {
+      "transactionId": "T135",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jacket",
+      "price": 125.99
+    },
+    {
+      "transactionId": "T136",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 45.25
+    },
+    {
+      "transactionId": "T137",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Shoes",
+      "price": 110.00
+    },
+    {
+      "transactionId": "T138",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Scarf",
+      "price": 22.50
+    },
+    {
+      "transactionId": "T139",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Gloves",
+      "price": 18.75
+    },
+    {
+      "transactionId": "T140",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Sweater",
+      "price": 120.00
+    },
+    {
+      "transactionId": "T141",
+      "customerId": "CUS028",
+      "customerName": "Kunal",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Shirt",
+      "price": 55.50
+    },
+    {
+      "transactionId": "T142",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Shirt",
+      "price": 50
+    },
+    {
+      "transactionId": "T143",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 90
+    },
+    {
+      "transactionId": "T144",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Sweater",
+      "price": 120
+    },
+    {
+      "transactionId": "T145",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jacket",
+      "price": 180
+    },
+    {
+      "transactionId": "T146",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "Boots",
+      "price": 150
+    },
+    {
+      "transactionId": "T147",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T148",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Scarf",
+      "price": 20
+    },
+    {
+      "transactionId": "T149",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Sweater",
+      "price": 130
+    },
+    {
+      "transactionId": "T150",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Shirt",
+      "price": 55
+    },
+    {
+      "transactionId": "T151",
+      "customerId": "CUS007",
+      "customerName": "Mahesh",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Jeans",
+      "price": 95
+    },
+    {
+      "transactionId": "T152",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "T-shirt",
+      "price": 45
+    },
+    {
+      "transactionId": "T153",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 90
+    },
+    {
+      "transactionId": "T154",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Sweater",
+      "price": 120
+    },
+    {
+      "transactionId": "T155",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jacket",
+      "price": 200
+    },
+    {
+      "transactionId": "T156",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "Boots",
+      "price": 150
+    },
+    {
+      "transactionId": "T157",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 60
+    },
+    {
+      "transactionId": "T158",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Scarf",
+      "price": 22
+    },
+    {
+      "transactionId": "T159",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Sweater",
+      "price": 130
+    },
+    {
+      "transactionId": "T160",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Shirt",
+      "price": 55
+    },
+    {
+      "transactionId": "T161",
+      "customerId": "CUS027",
+      "customerName": "Maya",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Jeans",
+      "price": 95
+    },
+    {
+      "transactionId": "T162",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Shirt",
+      "price": 50.50
+    },
+    {
+      "transactionId": "T163",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 85.75
+    },
+    {
+      "transactionId": "T164",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Sweater",
+      "price": 110.30
+    },
+    {
+      "transactionId": "T165",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jacket",
+      "price": 145.99
+    },
+    {
+      "transactionId": "T166",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "Boots",
+      "price": 120.00
+    },
+    {
+      "transactionId": "T167",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 60.00
+    },
+    {
+      "transactionId": "T168",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Scarf",
+      "price": 22.50
+    },
+    {
+      "transactionId": "T169",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Sweater",
+      "price": 130.50
+    },
+    {
+      "transactionId": "T170",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Shirt",
+      "price": 55.00
+    },
+    {
+      "transactionId": "T171",
+      "customerId": "CUS018",
+      "customerName": "Meera",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Jeans",
+      "price": 95.00
+    },
+    {
+      "transactionId": "T172",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "T-Shirt",
+      "price": 85
+    },
+    {
+      "transactionId": "T173",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 95
+    },
+    {
+      "transactionId": "T174",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Sweater",
+      "price": 110
+    },
+    {
+      "transactionId": "T175",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jacket",
+      "price": 150
+    },
+    {
+      "transactionId": "T176",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "Boots",
+      "price": 125
+    },
+    {
+      "transactionId": "T177",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Scarf",
+      "price": 20
+    },
+    {
+      "transactionId": "T178",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 55
+    },
+    {
+      "transactionId": "T179",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Sweater",
+      "price": 120
+    },
+    {
+      "transactionId": "T180",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Shirt",
+      "price": 70
+    },
+    {
+      "transactionId": "T181",
+      "customerId": "CUS012",
+      "customerName": "Shreya",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Jeans",
+      "price": 95
+    },
+    {
+      "transactionId": "T182",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Sweater",
+      "price": 70.80
+    },
+    {
+      "transactionId": "T183",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 90.50
+    },
+    {
+      "transactionId": "T184",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Shirt",
+      "price": 50.00
+    },
+    {
+      "transactionId": "T185",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Jacket",
+      "price": 130.00
+    },
+    {
+      "transactionId": "T186",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 60.00
+    },
+    {
+      "transactionId": "T187",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Boots",
+      "price": 150.00
+    },
+    {
+      "transactionId": "T188",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Scarf",
+      "price": 25.00
+    },
+    {
+      "transactionId": "T189",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "20/12/2024",
+      "productPurchased": "Sweater",
+      "price": 75.00
+    },
+    {
+      "transactionId": "T190",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "25/12/2024",
+      "productPurchased": "Shirt",
+      "price": 55.00
+    },
+    {
+      "transactionId": "T191",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "30/12/2024",
+      "productPurchased": "Jacket",
+      "price": 140.00
+    },
+    {
+      "transactionId": "T192",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "05/01/2025",
+      "productPurchased": "Sweater",
+      "price": 80.00
+    },
+    {
+      "transactionId": "T193",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Jeans",
+      "price": 100.00
+    },
+    {
+      "transactionId": "T194",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "15/01/2025",
+      "productPurchased": "T-shirt",
+      "price": 65.00
+    },
+    {
+      "transactionId": "T195",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "20/01/2025",
+      "productPurchased": "Shirt",
+      "price": 55.50
+    },
+    {
+      "transactionId": "T196",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "25/01/2025",
+      "productPurchased": "Boots",
+      "price": 155.00
+    },
+    {
+      "transactionId": "T197",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "30/01/2025",
+      "productPurchased": "Jacket",
+      "price": 145.00
+    },
+    {
+      "transactionId": "T198",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "05/02/2025",
+      "productPurchased": "Sweater",
+      "price": 85.00
+    },
+    {
+      "transactionId": "T199",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "10/02/2025",
+      "productPurchased": "Jeans",
+      "price": 95.00
+    },
+    {
+      "transactionId": "T200",
+      "customerId": "CUS013",
+      "customerName": "Varun",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "T-shirt",
+      "price": 70.00
+    },
+    {
+      "transactionId": "T201",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "15/11/2024",
+      "productPurchased": "Jacket",
+      "price": 200.10
+    },
+    {
+      "transactionId": "T202",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "20/11/2024",
+      "productPurchased": "Jeans",
+      "price": 85.50
+    },
+    {
+      "transactionId": "T203",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "25/11/2024",
+      "productPurchased": "Shirt",
+      "price": 50.00
+    },
+    {
+      "transactionId": "T204",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "30/11/2024",
+      "productPurchased": "Sweater",
+      "price": 120.00
+    },
+    {
+      "transactionId": "T205",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "05/12/2024",
+      "productPurchased": "T-shirt",
+      "price": 65.00
+    },
+    {
+      "transactionId": "T206",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "10/12/2024",
+      "productPurchased": "Scarf",
+      "price": 25.00
+    },
+    {
+      "transactionId": "T207",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "15/12/2024",
+      "productPurchased": "Boots",
+      "price": 150.00
+    },
+    {
+      "transactionId": "T208",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "20/12/2024",
+      "productPurchased": "Sweater",
+      "price": 110.00
+    },
+    {
+      "transactionId": "T209",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "10/01/2025",
+      "productPurchased": "Jeans",
+      "price": 95.00
+    },
+    {
+      "transactionId": "T210",
+      "customerId": "CUS019",
+      "customerName": "Vikram",
+      "purchaseDate": "02/02/2025",
+      "productPurchased": "Shirt",
+      "price": 60.00
     }
+  
   ]
 }

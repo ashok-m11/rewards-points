@@ -1,6 +1,11 @@
+// TransactionsPage.js
 import { useState, useEffect } from "react";
-import { handleFetchData } from "../services/fetchData";
-import { calculatePoints } from "../utils/utils";
+import { handleFetchData } from "../services/fetchData"; // Assuming this is fetching data
+import {
+  aggregateRewardsByCustomerUtil,
+  aggregateRewardsByMonthYear,
+  transactionsWithPoints,
+} from "../utils/utils";
 import Transactions from "../components/Transactions";
 import TotalRewards from "../components/TotalRewards";
 import MonthlyRewards from "../components/MonthlyRewards";
@@ -26,44 +31,9 @@ function TransactionsPage() {
         Logger.warn(data.error);
         setError("Failed to load response data");
       } else {
-        const monthsToDisplay = 3;
-        const today = new Date();
-        const threeMonthsAgo = new Date(
-          today.setMonth(today.getMonth() - monthsToDisplay)
-        );
-
-        const parseDate = (dateStr) => {
-          const [day, month, year] = dateStr.split("/");
-          return new Date(`${month}/${day}/${year}`);
-        };
-
-        const transactionsWithPoints = data
-          .filter((transaction) => {
-            const purchaseDate = parseDate(transaction.purchaseDate);
-            const flooredPrice = Math.floor(transaction.price);
-            return (
-              !isNaN(transaction.price) &&
-              Number.isFinite(transaction.price) &&
-              flooredPrice >= 50 &&
-              purchaseDate >= threeMonthsAgo
-            );
-          })
-          .map((transaction) => {
-            const flooredPrice = Math.floor(transaction.price);
-            return {
-              ...transaction,
-              rewardsPoints: calculatePoints(flooredPrice),
-            };
-          })
-          .sort((a, b) => {
-            const dateA = parseDate(a.purchaseDate);
-            const dateB = parseDate(b.purchaseDate);
-            return dateA - dateB;
-          });
-
-        setDataSet(transactionsWithPoints);
-        userTotalRewardsCount(transactionsWithPoints);
-        prepareTableDataMonthly(transactionsWithPoints);
+        setDataSet(transactionsWithPoints(data));
+        userTotalRewardsCount(transactionsWithPoints(data));
+        prepareTableDataMonthly(transactionsWithPoints(data));
       }
     } catch (error) {
       const errorMsg = `Failed to load response data: ${error.message}`;
@@ -78,71 +48,16 @@ function TransactionsPage() {
     fetchDataTransactions();
   }, []);
 
+  // Prepare total rewards to pass to TotalRewards component
   const userTotalRewardsCount = (data) => {
-    const groupedData = data?.reduce((acc, item) => {
-      if (!acc[item?.customerId]) {
-        acc[item?.customerId] = {
-          customerName: item?.customerName,
-          rewardsPoints: 0,
-        };
-      }
-      acc[item?.customerId].rewardsPoints += item?.rewardsPoints;
-      return acc;
-    }, {});
-
-    const result = Object.entries(groupedData).map(
-      ([customerId, { customerName, rewardsPoints }]) => ({
-        customerId,
-        customerName,
-        rewardsPoints,
-      })
-    );
-
-    setTotalRewards(result);
-  };
-
-  const aggregateRewardsByMonthYear = (transactions) => {
-    const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    return Object.entries(
-      transactions.reduce((acc, transaction) => {
-        const { customerId, customerName, purchaseDate, rewardsPoints } =
-          transaction;
-        const [day, month, year] = purchaseDate.split("/");
-        const key = `${customerId}-${month}-${year}`;
-        const monthName = monthNames[parseInt(month) - 1];
-
-        if (!acc[key]) {
-          acc[key] = {
-            customerId,
-            customerName,
-            month: monthName,
-            year,
-            rewardsPoints: 0,
-          };
-        }
-        acc[key].rewardsPoints += rewardsPoints;
-        return acc;
-      }, {})
-    );
+    setTotalRewards(aggregateRewardsByCustomerUtil(data));
   };
 
   const prepareTableDataMonthly = (transactions) => {
     const aggregatedData = aggregateRewardsByMonthYear(transactions);
     setMonthlyRewards(aggregatedData);
   };
+
   return (
     <div>
       {isLoading ? (
@@ -158,7 +73,6 @@ function TransactionsPage() {
           <div className="row">
             <div className="col-6">
               <h3 className="heading">User Monthly Rewards</h3>
-
               {monthlyRewards.length === 0 ? (
                 <p>No data available</p>
               ) : (
@@ -170,16 +84,14 @@ function TransactionsPage() {
             </div>
             <div className="col-6">
               <h3 className="heading">Total rewards</h3>
-
               {totalRewards.length === 0 ? (
-                <p>No data available </p>
+                <p>No data available</p>
               ) : (
                 <TotalRewards onRowClick={handleRowClick} data={totalRewards} />
               )}
             </div>
             <div className="col-12">
               <h3 className="heading">Transactions</h3>
-
               {dataSet.length === 0 ? (
                 <p>No data available</p>
               ) : (

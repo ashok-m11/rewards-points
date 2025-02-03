@@ -21,7 +21,11 @@ function Transactions({ selectedRow, data }) {
           {data?.map((data, index) => (
             <tr
               key={`${data.transactionId}-${index}`}
-              className={data.customerId === selectedRow ? "highlight-row" : ""}
+              className={
+                `${data.customerId}-${data.customerName}` === selectedRow
+                  ? "highlight-row"
+                  : ""
+              }
             >
               <td>{data.transactionId}</td>
               <td>{data.customerName}</td>

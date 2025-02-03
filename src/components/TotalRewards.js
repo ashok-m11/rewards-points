@@ -3,9 +3,9 @@ import React, { useState } from "react";
 
 function TotalRewards({ onRowClick, data }) {
   const [selectedRow, setSelectedRow] = useState(null);
-  const highlightCustomer = (cusId) => {
-    onRowClick(cusId);
-    setSelectedRow(cusId);
+  const highlightCustomer = (Customer) => {
+    onRowClick(Customer);
+    setSelectedRow(Customer);
   };
 
   return (
@@ -19,15 +19,17 @@ function TotalRewards({ onRowClick, data }) {
             </th>
           </tr>
         </thead>
+
         <tbody>
-          {data?.map((data) => (
+          {data.map(([key, item]) => (
             <tr
-              key={data.customerId}
-              onClick={() => highlightCustomer(data.customerId)}
-              className={data.customerId === selectedRow ? "highlight-row" : ""}
+              key={key}
+              onClick={() => highlightCustomer(key)}
+              className={key === selectedRow ? "highlight-row" : ""}
             >
-              <td>{data.customerName}</td>
-              <td className="text-end">{data.rewardsPoints}</td>
+              <td>{item.customerName}</td>
+
+              <td className="text-end">{item.rewardsPoints}</td>
             </tr>
           ))}
         </tbody>

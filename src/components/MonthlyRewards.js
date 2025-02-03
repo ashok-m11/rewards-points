@@ -18,7 +18,11 @@ function MonthlyRewards({ selectedRow, data }) {
           {data.map(([key, item]) => (
             <tr
               key={key}
-              className={item.customerId === selectedRow ? "highlight-row" : ""}
+              className={
+                `${item.customerId}-${item.customerName}` === selectedRow
+                  ? "highlight-row"
+                  : ""
+              }
             >
               <td>{item.customerId}</td>
               <td>{item.customerName}</td>
