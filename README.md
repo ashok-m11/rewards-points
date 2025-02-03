@@ -10,6 +10,12 @@ This is a React-based project that tracks and displays customer transaction data
 - Display aggregated reward points by month and year.
 - Filter transactions based on price and date range (e.g., last 3 months).
 
+### `Rewards calculation conditions`
+- calculating only for last three months records
+- if price is string not calculating
+- if price is < 50 no reards calculation
+- records by default showing Ascending order
+
 
 ### Files and their content
 src/services/fetchData.js  which contains fetch json data from public/data.json
