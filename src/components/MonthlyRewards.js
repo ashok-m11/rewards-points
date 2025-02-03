@@ -1,88 +1,49 @@
-import { useEffect, useState } from "react";
-import { handleFetchData } from "../fetchdata";
-
-function MonthlyRewards() {
-  const [dataSet, setDataSet] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-
- const fetchDataMonthlyData = async () => {
-    try {
-      const res = await handleFetchData();
-      return !res.error ? prepareTableData(res) : setError(res.error);
-    } catch (error) {
-      console.error(error); // Add logging here
-      setError('Something went wrong');
-      return { error: 'Something went wrong' };
-    } finally {
-      setIsLoading(false);
-    }
-  };
-  
-  useEffect(() => {
-    fetchDataMonthlyData();
-  },[]);
-
-  const aggregateRewardsByMonthYear = (transactions)=>{
-    return Object.entries(
-        transactions.reduce((acc, transaction)=>{
-            const{customerId, customerName, purchaseDate, rewardsPoints} = transaction;
-            const[day, month, year] = purchaseDate.split("/");
-            const key = `${customerId}-${month}-${year}`;
-            if(!acc[key]){
-                acc[key] = {
-                    customerId, customerName, month, year, rewardsPoints:0,
-                };
-            }
-            acc[key].rewardsPoints += rewardsPoints
-           
-            
-            return acc;
-        }, {})
-    )
-  }
-
-  const prepareTableData = (transactions) =>{
-    const aggregatedData = aggregateRewardsByMonthYear(transactions);
-       setDataSet(aggregatedData);
-    
-  }
-
+import PropTypes from "prop-types";
+function MonthlyRewards({ selectedRow, data }) {
   return (
     <div>
-   
-      
-      <h3 className="heading">User Monthly Rewards</h3> {/* Heading always displayed */}
-      {isLoading ? <div role="status" aria-live="polite">Loading...</div> : error ? <div className="alert alert-danger" role="alert">Error: {error}</div> : null}
-      {dataSet.length > 0 ? (
-        <table className="table table-hover table-sm caption-top">
-          <thead className="thead-dark">
-            <tr>
-              <th scope="col">Customer Id</th>
-              <th scope="col">Customer Name</th>
-              <th scope="col">Month</th>
-              <th scope="col">Year</th>
-              <th scope="col" className="text-end">Reward Points</th>
+      <table className="table table-hover table-sm caption-top">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">Customer Id</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Month</th>
+            <th scope="col">Year</th>
+            <th scope="col" className="text-end">
+              Reward Points
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(([key, item]) => (
+            <tr
+              key={key}
+              className={item.customerId === selectedRow ? "highlight-row" : ""}
+            >
+              <td>{item.customerId}</td>
+              <td>{item.customerName}</td>
+              <td>{item.month}</td>
+              <td>{item.year}</td>
+              <td className="text-end">{item.rewardsPoints}</td>
             </tr>
-          </thead>
-          <tbody>
-            {dataSet?.map((data) => (
-              <tr key={data[1]?.customerId}>
-                <td>{data[1]?.customerId}</td>
-                <td>{data[1]?.customerName}</td>
-                <td>{data[1]?.month}</td>
-                <td>{data[1]?.year}</td>
-                <td className="text-end">{data[1]?.rewardsPoints}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>{!error && "No data available"}</p> // Display when there's no data
-      )}
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
 
+MonthlyRewards.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        customerId: PropTypes.string.isRequired,
+        customerName: PropTypes.string.isRequired,
+        month: PropTypes.string.isRequired,
+        year: PropTypes.string.isRequired,
+        rewardsPoints: PropTypes.number.isRequired,
+      })
+    )
+  ).isRequired,
+};
 export default MonthlyRewards;

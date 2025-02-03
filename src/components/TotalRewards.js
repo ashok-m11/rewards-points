@@ -1,82 +1,47 @@
-import { useEffect, useState, useCallback } from "react";
-import { handleFetchData } from "../fetchdata";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
 
-function TotalRewards() {
-  const [dataSet, setDataSet] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-   // Define fetchData with useCallback to avoid unnecessary re-creations
-   const fetchData = useCallback(async () => {
-    try {
-      const res = await handleFetchData();
-      return !res.error ? aggregateData(res) : setError(res.error);
-    } catch (error) {
-      console.error(error); // Add logging here
-      setError('Something went wrong');
-      return { error: 'Something went wrong' };
-    } finally {
-      setIsLoading(false);
-    }
-  }, []); 
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]); 
-
-  const aggregateData = (data) => {
-    const groupedData = data?.reduce((acc, item) => {
-      if (!acc[item?.customerId]) {
-        acc[item?.customerId] = { customerName: item?.customerName, rewardsPoints: 0 };
-      }
-      acc[item?.customerId].rewardsPoints += item?.rewardsPoints;
-      return acc;
-    }, {});
-    
-    const result = Object.entries(groupedData).map(([customerId, { customerName, rewardsPoints }]) => ({
-      customerId, customerName, rewardsPoints
-    }));
-
-    setDataSet(result);
+function TotalRewards({ onRowClick, data }) {
+  const [selectedRow, setSelectedRow] = useState(null);
+  const highlightCustomer = (cusId) => {
+    onRowClick(cusId);
+    setSelectedRow(cusId);
   };
 
- 
-  
   return (
     <div>
-       <h3 className="heading">Total rewards</h3>
-      {isLoading ? <div role="status" aria-live="polite">Loading...</div> : error ? <div className="alert alert-danger" role="alert">Error: {error}</div> : null}
-
-{dataSet.length > 0 ? (
-
-      <table className="table  table-hover table-sm caption-top">
-      
+      <table className="table table-hover  table-sm caption-top">
         <thead className="thead-dark">
           <tr>
-            
             <th scope="col">Customer Name</th>
-            
-            <th scope="col" className="text-end">Reward Points</th>
+            <th scope="col" className="text-end">
+              Reward Points
+            </th>
           </tr>
         </thead>
         <tbody>
-          {dataSet?.map((data) => (
-            <tr key={data.customerName}>
-              
+          {data?.map((data) => (
+            <tr
+              key={data.customerId}
+              onClick={() => highlightCustomer(data.customerId)}
+              className={data.customerId === selectedRow ? "highlight-row" : ""}
+            >
               <td>{data.customerName}</td>
-             
               <td className="text-end">{data.rewardsPoints}</td>
             </tr>
           ))}
         </tbody>
       </table>
-  
-) : (
-  <p>{!error && "No data available"}</p> // Display when there's no data
-)}
     </div>
   );
-
 }
-
+// PropTypes validation for the `data` prop passed into the component
+TotalRewards.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      customerName: PropTypes.string.isRequired,
+      rewardsPoints: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
 export default TotalRewards;

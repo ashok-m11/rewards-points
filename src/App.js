@@ -1,28 +1,8 @@
-import Transactions from './components/Transactions';
-import TotalRewards from './components/TotalRewards';
-import MonthlyRewards from './components/MonthlyRewards';
-import './App.css';
+import "./App.css";
+import TransactionsPage from "./pages/TransactionsPage";
 
 function App() {
-  
-  
-  
-  return (
-    
-    <div class="container">
-
-    <div class="row">
-  
-      <div class="col-6"> <MonthlyRewards /></div>
-  
-      <div class="col-6"> <TotalRewards />  </div>
-  
-      <div class="col-12">  <Transactions />  </div>
-  
-    </div>
-  
-  </div>
-  );
+  return <TransactionsPage />;
 }
 
 export default App;
