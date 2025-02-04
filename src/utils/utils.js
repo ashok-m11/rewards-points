@@ -23,8 +23,51 @@ export const calculateRewardsPoints = (amount) => {
   return rewardsPoints;
 };
 
+// Utility function to deep clone and sort the data by date
+export const sortDataByDate = (data, dateKey) => {
+  // Deep clone the data to avoid mutating the original data
+  const clonedData = JSON.parse(JSON.stringify(data));
+
+  return clonedData.sort((a, b) => {
+    // Extract and parse the date in dd/mm/yyyy format
+    const [dayA, monthA, yearA] = a[dateKey].split("/").map(Number);
+    const [dayB, monthB, yearB] = b[dateKey].split("/").map(Number);
+
+    // Create Date objects using the parsed values (month is 0-indexed in JS)
+    const dateA = new Date(yearA, monthA - 1, dayA); // Adjust month (0-indexed)
+    const dateB = new Date(yearB, monthB - 1, dayB);
+
+    // Check if the dates are valid (not NaN)
+    if (isNaN(dateA) || isNaN(dateB)) {
+      return 0; // Handle invalid date
+    }
+
+    // Sort the dates (earliest to latest)
+    return dateB - dateA;
+  });
+};
+
+// Utility function to deep clone and sort the data based on a key
+export const sortData = (data, sortKey) => {
+  // Deep clone the data to avoid mutating the original data
+  const clonedData = JSON.parse(JSON.stringify(data));
+
+  return clonedData.sort((a, b) => {
+    // Extract values based on the sortKey
+    const valA = a[1][sortKey] || ""; // Default to empty string if value is missing
+    const valB = b[1][sortKey] || ""; // Default to empty string if value is missing
+
+    if (valA < valB) return -1;
+    if (valA > valB) return 1;
+    return 0;
+  });
+};
+
 export const parseDate = (dateStr) => {
-  const [day, month, year] = dateStr.split("/");
+  const parsedDate = new Date(dateStr.split("/").reverse().join("-")); // Convert dd/mm/yyyy to yyyy-mm-dd
+  const day = parsedDate.getDate();
+  const month = parsedDate.getMonth() + 1;
+  const year = parsedDate.getFullYear();
   return new Date(`${month}/${day}/${year}`);
 };
 
@@ -41,23 +84,23 @@ export const aggregateRewardsByCustomer = (data) => {
   }, {});
 };
 
-export const aggregateRewardsByMonthYear = (transactions) => {
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
-  return Object.entries(
+export const aggregateRewardsByMonthYear = (transactions) => {
+  const result = Object.entries(
     transactions.reduce((acc, transaction) => {
       const { customerId, customerName, purchaseDate, rewardsPoints } =
         transaction;
@@ -86,6 +129,9 @@ export const aggregateRewardsByMonthYear = (transactions) => {
       return acc;
     }, {})
   );
+
+  // Use the sortData function to sort by customerId
+  return sortData(result, "customerId");
 };
 
 export const transactionsWithPoints = (data) => {
@@ -95,7 +141,7 @@ export const transactionsWithPoints = (data) => {
     today.setMonth(today.getMonth() - monthsToDisplay)
   );
 
-  return data
+  const filteredData = data
     .filter((transaction) => {
       const purchaseDate = parseDate(transaction.purchaseDate);
       return purchaseDate >= threeMonthsAgo && transaction.price > 50;
@@ -115,12 +161,10 @@ export const transactionsWithPoints = (data) => {
       // Skip the transaction if rewardsPoints are 0
       return null;
     })
-    .filter((transaction) => transaction !== null) // Remove any null transactions
-    .sort((a, b) => {
-      const dateA = parseDate(a.purchaseDate);
-      const dateB = parseDate(b.purchaseDate);
-      return dateA - dateB;
-    });
+    .filter((transaction) => transaction !== null); // Remove any null transactions
+
+  // Use the sortDataByDate function to sort by purchaseDate
+  return sortDataByDate(filteredData, "purchaseDate");
 };
 
 export const aggregateRewardsByCustomerUtil = (transactions) => {
@@ -141,14 +185,6 @@ export const aggregateRewardsByCustomerUtil = (transactions) => {
     }, {})
   );
 
-  // Sort the result by customerName
-  result.sort((a, b) => {
-    const nameA = a[1].customerName.toLowerCase();
-    const nameB = b[1].customerName.toLowerCase();
-    if (nameA < nameB) return -1;
-    if (nameA > nameB) return 1;
-    return 0;
-  });
-
-  return result;
+  // Use the sortData function to sort by customerName
+  return sortData(result, "customerName");
 };

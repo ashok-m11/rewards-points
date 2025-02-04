@@ -25,14 +25,6 @@
       "price": 205
     },
     {
-      "transactionId": "T004",
-      "customerId": "CUS004",
-      "customerName": "Ram",
-      "purchaseDate": "25/09/2024",
-      "productPurchased": "Sweater",
-      "price": 99.99
-    },
-    {
       "transactionId": "T005",
       "customerId": "CUS005",
       "customerName": "Raju",
@@ -55,22 +47,6 @@
       "purchaseDate": "10/10/2024",
       "productPurchased": "Jacket",
       "price": 200
-    },
-    {
-      "transactionId": "T008",
-      "customerId": "CUS008",
-      "customerName": "Sita",
-      "purchaseDate": "15/10/2024",
-      "productPurchased": "Sweater",
-      "price": 145.45
-    },
-    {
-      "transactionId": "T009",
-      "customerId": "CUS009",
-      "customerName": "Nisha",
-      "purchaseDate": "20/10/2024",
-      "productPurchased": "Dress",
-      "price": 90
     },
     {
       "transactionId": "T010",
@@ -129,22 +105,6 @@
       "price": 185
     },
     {
-      "transactionId": "T017",
-      "customerId": "CUS020",
-      "customerName": "Sneha",
-      "purchaseDate": "15/11/2024",
-      "productPurchased": "T-Shirt",
-      "price": 40
-    },
-    {
-      "transactionId": "T018",
-      "customerId": "CUS020",
-      "customerName": "Sneha",
-      "purchaseDate": "20/11/2024",
-      "productPurchased": "Jeans",
-      "price": 90
-    },
-    {
       "transactionId": "T019",
       "customerId": "CUS022",
       "customerName": "Saurabh",
@@ -167,14 +127,6 @@
       "purchaseDate": "10/12/2024",
       "productPurchased": "Sweater",
       "price": 99.99
-    },
-    {
-      "transactionId": "T022",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "15/12/2024",
-      "productPurchased": "Shirt",
-      "price": 60.5
     },
     {
       "transactionId": "T023",
@@ -225,22 +177,6 @@
       "price": 85.5
     },
     {
-      "transactionId": "T029",
-      "customerId": "CUS030",
-      "customerName": "Nikhil",
-      "purchaseDate": "14/02/2025",
-      "productPurchased": "Jeans",
-      "price": 95
-    },
-    {
-      "transactionId": "T030",
-      "customerId": "CUS030",
-      "customerName": "Nikhil",
-      "purchaseDate": "28/11/2024",
-      "productPurchased": "T-Shirt",
-      "price": 60
-    },
-    {
       "transactionId": "T031",
       "customerId": "CUS029",
       "customerName": "Sonal",
@@ -265,14 +201,6 @@
       "price": 90
     },
     {
-      "transactionId": "T034",
-      "customerId": "CUS004",
-      "customerName": "Ram",
-      "purchaseDate": "20/12/2024",
-      "productPurchased": "Sweater",
-      "price": 120
-    },
-    {
       "transactionId": "T035",
       "customerId": "CUS005",
       "customerName": "Raju",
@@ -295,22 +223,6 @@
       "purchaseDate": "12/11/2024",
       "productPurchased": "Jacket",
       "price": 200
-    },
-    {
-      "transactionId": "T038",
-      "customerId": "CUS008",
-      "customerName": "Sita",
-      "purchaseDate": "18/11/2024",
-      "productPurchased": "Sweater",
-      "price": 145
-    },
-    {
-      "transactionId": "T039",
-      "customerId": "CUS009",
-      "customerName": "Nisha",
-      "purchaseDate": "25/11/2024",
-      "productPurchased": "Dress",
-      "price": 90
     },
     {
       "transactionId": "T040",
@@ -353,14 +265,6 @@
       "price": 120
     },
     {
-      "transactionId": "T045",
-      "customerId": "CUS015",
-      "customerName": "Ravi",
-      "purchaseDate": "01/12/2024",
-      "productPurchased": "Jeans",
-      "price": 105
-    },
-    {
       "transactionId": "T046",
       "customerId": "CUS006",
       "customerName": "Neha",
@@ -393,14 +297,6 @@
       "price": 200
     },
     {
-      "transactionId": "T050",
-      "customerId": "CUS020",
-      "customerName": "Sneha",
-      "purchaseDate": "25/12/2024",
-      "productPurchased": "Watch",
-      "price": 95
-    },
-    {
       "transactionId": "T051",
       "customerId": "CUS021",
       "customerName": "Amit",
@@ -417,28 +313,12 @@
       "price": 90
     },
     {
-      "transactionId": "T053",
-      "customerId": "CUS023",
-      "customerName": "Suman",
-      "purchaseDate": "15/01/2025",
-      "productPurchased": "Trousers",
-      "price": 130
-    },
-    {
       "transactionId": "T054",
       "customerId": "CUS023",
       "customerName": "Deepak",
       "purchaseDate": "20/01/2025",
       "productPurchased": "Sweater",
       "price": 95
-    },
-    {
-      "transactionId": "T055",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "25/01/2025",
-      "productPurchased": "Shirt",
-      "price": 75
     },
     {
       "transactionId": "T056",
@@ -976,86 +856,7 @@
       "productPurchased": "Pants",
       "price": 80.75
     },
-    {
-      "transactionId": "T122",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "01/10/2024",
-      "productPurchased": "Shirt",
-      "price": 60.50
-    },
-    {
-      "transactionId": "T123",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "05/10/2024",
-      "productPurchased": "Jeans",
-      "price": 85.75
-    },
-    {
-      "transactionId": "T124",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "12/10/2024",
-      "productPurchased": "T-shirt",
-      "price": 45.99
-    },
-    {
-      "transactionId": "T125",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "18/10/2024",
-      "productPurchased": "Sweater",
-      "price": 95.00
-    },
-    {
-      "transactionId": "T126",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "22/10/2024",
-      "productPurchased": "Jacket",
-      "price": 120.25
-    },
-    {
-      "transactionId": "T127",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "03/11/2024",
-      "productPurchased": "Shoes",
-      "price": 75.50
-    },
-    {
-      "transactionId": "T128",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "08/11/2024",
-      "productPurchased": "Hat",
-      "price": 25.99
-    },
-    {
-      "transactionId": "T129",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "14/11/2024",
-      "productPurchased": "Scarf",
-      "price": 20.00
-    },
-    {
-      "transactionId": "T130",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "21/11/2024",
-      "productPurchased": "Gloves",
-      "price": 18.50
-    },
-    {
-      "transactionId": "T131",
-      "customerId": "CUS024",
-      "customerName": "Dinesh",
-      "purchaseDate": "28/11/2024",
-      "productPurchased": "Shirt",
-      "price": 60.50
-    },
+
     {
       "transactionId": "T132",
       "customerId": "CUS028",
