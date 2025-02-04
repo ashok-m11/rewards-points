@@ -1,5 +1,5 @@
 // TransactionsPage.js
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { handleFetchData } from "../services/fetchData"; // Assuming this is fetching data
 import {
   aggregateRewardsByCustomerUtil,
@@ -23,7 +23,7 @@ function TransactionsPage() {
     setSelectedRow(value);
   };
 
-  const fetchDataTransactions = async () => {
+  const fetchDataTransactions = useCallback(async () => {
     try {
       const data = await handleFetchData();
 
@@ -42,11 +42,11 @@ function TransactionsPage() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchDataTransactions();
-  }, []);
+  }, [fetchDataTransactions]);
 
   // Prepare total rewards to pass to TotalRewards component
   const userTotalRewardsCount = (data) => {

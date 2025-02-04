@@ -1,6 +1,15 @@
 export const calculateRewardsPoints = (amount) => {
-  let rewardsPoints = 0;
+  // First, floor the amount
   amount = Math.floor(amount);
+
+  // Check for invalid (NaN) values and return 0 if invalid
+  if (isNaN(amount) || amount <= 0) {
+    return 0;
+  }
+
+  let rewardsPoints = 0;
+
+  // Calculate rewards points based on the amount
   if (amount <= 50) {
     rewardsPoints = 0;
   } else if (amount > 50 && amount <= 100) {
@@ -10,6 +19,7 @@ export const calculateRewardsPoints = (amount) => {
     const pointsBetween50And100 = 50;
     rewardsPoints = pointsAbove100 + pointsBetween50And100;
   }
+
   return rewardsPoints;
 };
 
@@ -84,23 +94,28 @@ export const transactionsWithPoints = (data) => {
   const threeMonthsAgo = new Date(
     today.setMonth(today.getMonth() - monthsToDisplay)
   );
+
   return data
     .filter((transaction) => {
       const purchaseDate = parseDate(transaction.purchaseDate);
-      const flooredPrice = Math.floor(transaction.price);
-      return (
-        !isNaN(transaction.price) &&
-        Number.isFinite(transaction.price) &&
-        flooredPrice > 50 &&
-        purchaseDate >= threeMonthsAgo
-      );
+      return purchaseDate >= threeMonthsAgo && transaction.price > 50;
     })
     .map((transaction) => {
-      return {
-        ...transaction,
-        rewardsPoints: calculateRewardsPoints(transaction.price),
-      };
+      // Calculate rewards points for each transaction
+      const rewardsPoints = calculateRewardsPoints(transaction.price);
+
+      // Only return the transaction if rewardsPoints are greater than 0
+      if (rewardsPoints > 0) {
+        return {
+          ...transaction,
+          rewardsPoints,
+        };
+      }
+
+      // Skip the transaction if rewardsPoints are 0
+      return null;
     })
+    .filter((transaction) => transaction !== null) // Remove any null transactions
     .sort((a, b) => {
       const dateA = parseDate(a.purchaseDate);
       const dateB = parseDate(b.purchaseDate);
