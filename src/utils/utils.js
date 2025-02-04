@@ -1,6 +1,6 @@
 export const calculateRewardsPoints = (amount) => {
   let rewardsPoints = 0;
-
+  amount = Math.floor(amount);
   if (amount <= 50) {
     rewardsPoints = 0;
   } else if (amount > 50 && amount <= 100) {
@@ -10,8 +10,7 @@ export const calculateRewardsPoints = (amount) => {
     const pointsBetween50And100 = 50;
     rewardsPoints = pointsAbove100 + pointsBetween50And100;
   }
-  // Apply Math.floor to return the floor value
-  return Math.floor(rewardsPoints);
+  return rewardsPoints;
 };
 
 export const parseDate = (dateStr) => {
@@ -88,10 +87,11 @@ export const transactionsWithPoints = (data) => {
   return data
     .filter((transaction) => {
       const purchaseDate = parseDate(transaction.purchaseDate);
+      const flooredPrice = Math.floor(transaction.price);
       return (
         !isNaN(transaction.price) &&
         Number.isFinite(transaction.price) &&
-        transaction.price > 50 &&
+        flooredPrice > 50 &&
         purchaseDate >= threeMonthsAgo
       );
     })
