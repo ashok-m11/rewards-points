@@ -1,6 +1,5 @@
-// TransactionsPage.js
 import { useState, useEffect, useCallback } from "react";
-import { handleFetchData } from "../services/fetchData"; // Assuming this is fetching data
+import { handleFetchData } from "../services/fetchData";
 import {
   aggregateRewardsByCustomerUtil,
   aggregateRewardsByMonthYear,
