@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 function MonthlyRewards({ selectedRow, data }) {
   return (
     <div>
@@ -50,4 +51,5 @@ MonthlyRewards.propTypes = {
     )
   ).isRequired,
 };
+
 export default MonthlyRewards;

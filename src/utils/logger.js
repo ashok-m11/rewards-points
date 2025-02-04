@@ -1,5 +1,3 @@
-const isProduction = process.env.NODE_ENV === "production";
-
 // Logger with different levels (info, warn, error)
 class Logger {
   static log(message) {

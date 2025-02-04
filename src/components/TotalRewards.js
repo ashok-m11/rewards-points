@@ -3,9 +3,10 @@ import React, { useState } from "react";
 
 function TotalRewards({ onRowClick, data }) {
   const [selectedRow, setSelectedRow] = useState(null);
-  const highlightCustomer = (Customer) => {
-    onRowClick(Customer);
-    setSelectedRow(Customer);
+
+  const highlightCustomer = (customer) => {
+    onRowClick(customer);
+    setSelectedRow(customer);
   };
 
   return (
@@ -46,4 +47,5 @@ TotalRewards.propTypes = {
     })
   ).isRequired,
 };
+
 export default TotalRewards;

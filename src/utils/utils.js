@@ -1,13 +1,17 @@
 export const calculateRewardsPoints = (amount) => {
+  let rewardsPoints = 0;
+
   if (amount <= 50) {
-    return 0;
+    rewardsPoints = 0;
   } else if (amount > 50 && amount <= 100) {
-    return amount - 50;
+    rewardsPoints = amount - 50;
   } else {
     const pointsAbove100 = (amount - 100) * 2;
     const pointsBetween50And100 = 50;
-    return pointsAbove100 + pointsBetween50And100;
+    rewardsPoints = pointsAbove100 + pointsBetween50And100;
   }
+  // Apply Math.floor to return the floor value
+  return Math.floor(rewardsPoints);
 };
 
 export const parseDate = (dateStr) => {
@@ -48,8 +52,15 @@ export const aggregateRewardsByMonthYear = (transactions) => {
     transactions.reduce((acc, transaction) => {
       const { customerId, customerName, purchaseDate, rewardsPoints } =
         transaction;
-      const [day, month, year] = purchaseDate.split("/");
-      const key = `${customerId}-${customerName}-${month}-${year}`;
+      // Convert purchaseDate to ISO date (yyyy-mm-dd)
+      const parsedDate = new Date(purchaseDate.split("/").reverse().join("-")); // Convert dd/mm/yyyy to yyyy-mm-dd
+
+      const month = parsedDate.getMonth() + 1; // Get month (0-indexed, so add 1)
+      const year = parsedDate.getFullYear(); // Extract year
+
+      // Format month to always have 2 digits (e.g., 09 instead of 9)
+      const formattedMonth = month < 10 ? `0${month}` : month;
+      const key = `${customerId}-${customerName}-${formattedMonth}-${year}`;
       const monthName = monthNames[parseInt(month) - 1];
 
       if (!acc[key]) {
@@ -77,19 +88,17 @@ export const transactionsWithPoints = (data) => {
   return data
     .filter((transaction) => {
       const purchaseDate = parseDate(transaction.purchaseDate);
-      const flooredPrice = Math.floor(transaction.price);
       return (
         !isNaN(transaction.price) &&
         Number.isFinite(transaction.price) &&
-        flooredPrice > 50 &&
+        transaction.price > 50 &&
         purchaseDate >= threeMonthsAgo
       );
     })
     .map((transaction) => {
-      const flooredPrice = Math.floor(transaction.price);
       return {
         ...transaction,
-        rewardsPoints: calculateRewardsPoints(flooredPrice),
+        rewardsPoints: calculateRewardsPoints(transaction.price),
       };
     })
     .sort((a, b) => {

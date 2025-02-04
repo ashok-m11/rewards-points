@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 function Transactions({ selectedRow, data }) {
   return (
     <div>

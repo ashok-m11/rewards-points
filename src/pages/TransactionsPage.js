@@ -15,7 +15,7 @@ function TransactionsPage() {
   const [dataSet, setDataSet] = useState([]);
   const [totalRewards, setTotalRewards] = useState([]);
   const [monthlyRewards, setMonthlyRewards] = useState([]);
-  const [error, setError] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedRow, setSelectedRow] = useState(null);
 
@@ -29,7 +29,7 @@ function TransactionsPage() {
 
       if (data.error) {
         Logger.warn(data.error);
-        setError("Failed to load response data");
+        setErrorMsg("Failed to load response data");
       } else {
         setDataSet(transactionsWithPoints(data));
         userTotalRewardsCount(transactionsWithPoints(data));
@@ -38,7 +38,7 @@ function TransactionsPage() {
     } catch (error) {
       const errorMsg = `Failed to load response data: ${error.message}`;
       Logger.error(errorMsg);
-      setError("Something went wrong");
+      setErrorMsg("Something went wrong");
     } finally {
       setIsLoading(false);
     }
@@ -64,9 +64,9 @@ function TransactionsPage() {
         <div role="status" aria-live="polite">
           Loading...
         </div>
-      ) : error ? (
+      ) : errorMsg ? (
         <div className="alert alert-danger" role="alert">
-          Error: {error}
+          Error: {errorMsg}
         </div>
       ) : (
         <div className="container">
