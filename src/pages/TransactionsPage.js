@@ -10,17 +10,28 @@ import TotalRewards from "../components/TotalRewards";
 import MonthlyRewards from "../components/MonthlyRewards";
 import Logger from "../utils/logger";
 
+// Helper component for conditional rendering
+const DataOrNoData = ({ data, noDataMessage, Component, componentProps }) => {
+  return data.length === 0 ? (
+    <p>{noDataMessage}</p>
+  ) : (
+    <Component {...componentProps} />
+  );
+};
+
 function TransactionsPage() {
   const [dataSet, setDataSet] = useState([]);
-  const [totalRewards, setTotalRewards] = useState([]);
-  const [monthlyRewards, setMonthlyRewards] = useState([]);
+  const [rewardsData, setRewardsData] = useState({
+    totalRewards: [],
+    monthlyRewards: [],
+  });
   const [errorMsg, setErrorMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedRow, setSelectedRow] = useState(null);
 
-  const handleRowClick = (value) => {
+  const handleRowClick = useCallback((value) => {
     setSelectedRow(value);
-  };
+  }, []);
 
   const fetchDataTransactions = useCallback(async () => {
     try {
@@ -30,13 +41,19 @@ function TransactionsPage() {
         Logger.warn(data.error);
         setErrorMsg("Failed to load response data");
       } else {
-        setDataSet(transactionsWithPoints(data));
-        userTotalRewardsCount(transactionsWithPoints(data));
-        prepareTableDataMonthly(transactionsWithPoints(data));
+        const transactions = transactionsWithPoints(data);
+        setDataSet(transactions);
+
+        const totalRewards = aggregateRewardsByCustomerUtil(transactions);
+        const monthlyRewards = aggregateRewardsByMonthYear(transactions);
+
+        setRewardsData({
+          totalRewards,
+          monthlyRewards,
+        });
       }
     } catch (error) {
-      const errorMsg = `Failed to load response data: ${error.message}`;
-      Logger.error(errorMsg);
+      Logger.error(`Failed to load response data: ${error.message}`);
       setErrorMsg("Something went wrong");
     } finally {
       setIsLoading(false);
@@ -46,16 +63,6 @@ function TransactionsPage() {
   useEffect(() => {
     fetchDataTransactions();
   }, [fetchDataTransactions]);
-
-  // Prepare total rewards to pass to TotalRewards component
-  const userTotalRewardsCount = (data) => {
-    setTotalRewards(aggregateRewardsByCustomerUtil(data));
-  };
-
-  const prepareTableDataMonthly = (transactions) => {
-    const aggregatedData = aggregateRewardsByMonthYear(transactions);
-    setMonthlyRewards(aggregatedData);
-  };
 
   return (
     <div>
@@ -72,30 +79,36 @@ function TransactionsPage() {
           <div className="row">
             <div className="col-6">
               <h3 className="heading">User Monthly Rewards</h3>
-              {monthlyRewards.length === 0 ? (
-                <p>No data available</p>
-              ) : (
-                <MonthlyRewards
-                  selectedRow={selectedRow}
-                  data={monthlyRewards}
-                />
-              )}
+              <DataOrNoData
+                data={rewardsData.monthlyRewards}
+                noDataMessage="No data available"
+                Component={MonthlyRewards}
+                componentProps={{
+                  selectedRow,
+                  data: rewardsData.monthlyRewards,
+                }}
+              />
             </div>
             <div className="col-6">
               <h3 className="heading">Total rewards</h3>
-              {totalRewards.length === 0 ? (
-                <p>No data available</p>
-              ) : (
-                <TotalRewards onRowClick={handleRowClick} data={totalRewards} />
-              )}
+              <DataOrNoData
+                data={rewardsData.totalRewards}
+                noDataMessage="No data available"
+                Component={TotalRewards}
+                componentProps={{
+                  onRowClick: handleRowClick,
+                  data: rewardsData.totalRewards,
+                }}
+              />
             </div>
             <div className="col-12">
               <h3 className="heading">Transactions</h3>
-              {dataSet.length === 0 ? (
-                <p>No data available</p>
-              ) : (
-                <Transactions selectedRow={selectedRow} data={dataSet} />
-              )}
+              <DataOrNoData
+                data={dataSet}
+                noDataMessage="No data available"
+                Component={Transactions}
+                componentProps={{ selectedRow, data: dataSet }}
+              />
             </div>
           </div>
         </div>

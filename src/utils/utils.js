@@ -1,41 +1,20 @@
 export const calculateRewardsPoints = (amount) => {
-  // First, floor the amount
-  amount = Math.floor(amount);
+  const flooredAmount = Math.floor(amount);
+  if (isNaN(flooredAmount) || flooredAmount <= 0) return 0;
 
-  // Check for invalid (NaN) values and return 0 if invalid
-  if (isNaN(amount) || amount <= 0) {
-    return 0;
-  }
+  if (flooredAmount <= 50) return 0;
+  if (flooredAmount <= 100) return flooredAmount - 50;
 
-  let rewardsPoints = 0;
-
-  // Calculate rewards points based on the amount
-  if (amount <= 50) {
-    rewardsPoints = 0;
-  } else if (amount > 50 && amount <= 100) {
-    rewardsPoints = amount - 50;
-  } else {
-    const pointsAbove100 = (amount - 100) * 2;
-    const pointsBetween50And100 = 50;
-    rewardsPoints = pointsAbove100 + pointsBetween50And100;
-  }
-
-  return rewardsPoints;
+  return (flooredAmount - 100) * 2 + 50;
 };
 
 // Utility function to deep clone and sort the data by date
 export const sortDataByDate = (data, dateKey) => {
   // Deep clone the data to avoid mutating the original data
-  const clonedData = JSON.parse(JSON.stringify(data));
-
+  const clonedData = structuredClone(data);
   return clonedData.sort((a, b) => {
-    // Extract and parse the date in dd/mm/yyyy format
-    const [dayA, monthA, yearA] = a[dateKey].split("/").map(Number);
-    const [dayB, monthB, yearB] = b[dateKey].split("/").map(Number);
-
-    // Create Date objects using the parsed values (month is 0-indexed in JS)
-    const dateA = new Date(yearA, monthA - 1, dayA); // Adjust month (0-indexed)
-    const dateB = new Date(yearB, monthB - 1, dayB);
+    const dateA = parseDate(a[dateKey]);
+    const dateB = parseDate(b[dateKey]);
 
     // Check if the dates are valid (not NaN)
     if (isNaN(dateA) || isNaN(dateB)) {
@@ -50,8 +29,7 @@ export const sortDataByDate = (data, dateKey) => {
 // Utility function to deep clone and sort the data based on a key
 export const sortData = (data, sortKey) => {
   // Deep clone the data to avoid mutating the original data
-  const clonedData = JSON.parse(JSON.stringify(data));
-
+  const clonedData = structuredClone(data);
   return clonedData.sort((a, b) => {
     // Extract values based on the sortKey
     const valA = a[1][sortKey] || ""; // Default to empty string if value is missing
